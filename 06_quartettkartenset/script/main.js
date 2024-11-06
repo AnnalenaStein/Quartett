@@ -10,7 +10,7 @@ $(document).ready(function () {
             <div class="card-content">
                 <div class="card-number">F2</div>
                 <div class="card-title">${animal.name_german}</div>
-                <img src="images/f2.jpg" alt="Nilpferd" class="card-image" />
+                <img src="images/pictures/${animal.name_german}.webp" alt="Bild von ${animal.name_german}" class="card-image" />
                 <div class="card-trivia">
                     Ihr Schweiß ist rötlich gefärbt, was sie wie blutende Tiere aussehen lässt.
                 </div>
