@@ -8,51 +8,49 @@ $(document).ready(function () {
     $.each(data, function (index, animal) {
         let divBox = $(`<div class="card-wrapper">
             <div class="card-content">
-                <div class="card-number">F2</div>
+                <div class="card-number">${animal.group}${animal.group_number}</div>
                 <div class="card-title">${animal.name_german}</div>
-                <img src="images/pictures/${animal.name_german}.webp" alt="Bild von ${animal.name_german}" class="card-image" />
+                <img src="images/pictures/${animal.name_german}.webp" alt="Nilpferd" class="card-image" />
                 <div class="card-trivia">
-                    Ihr Schweiß ist rötlich gefärbt, was sie wie blutende Tiere aussehen lässt.
+                ${animal.trivia_german}
                 </div>
-
-       
                 <div class="stat-icon">
-                    <img src="images/icons/weight.png" alt="weight" />
+                    <img src="images/icons/weight.jpeg" alt="weight" />
                 </div>
                 <div class="stat-value">4500</div>
 
 
         
                 <div class="stat-icon">
-                    <img src="images/icons/length.png" alt="length" />
+                    <img src="images/icons/length.jpeg" alt="length" />
                 </div>
                 <div class="stat-value">400</div>
 
 
           
                 <div class="stat-icon">
-                    <img src="images/icons/age.png" alt="maximum age" />
+                    <img src="images/icons/age.jpeg" alt="maximum age" />
                 </div>
                 <div class="stat-value">50</div>
 
 
        
                 <div class="stat-icon">
-                    <img src="images/icons/speed.png" alt="max speed" />
+                    <img src="images/icons/speed.jpeg" alt="max speed" />
                 </div>
                 <div class="stat-value">35</div>
 
 
     
                 <div class="stat-icon">
-                    <img src="images/icons/offspring.png" alt="offspring count per cycle" />
+                    <img src="images/icons/offspring.jpeg" alt="offspring count per cycle" />
                 </div>
                 <div class="stat-value">1</div>
 
 
              
                 <div class="stat-icon">
-                    <img src="images/icons/death.png" alt="casualties per year" />
+                    <img src="images/icons/death.jpeg" alt="casualties per year" />
                 </div>
                 <div class="stat-value">500</div>
 
@@ -60,7 +58,7 @@ $(document).ready(function () {
 
 
         </div>`);
-						
+
         $('#wrapper').append(divBox);
     });
 });
