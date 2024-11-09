@@ -13,10 +13,14 @@ body {
 
 
 header {
-    background-color: rgb(250, 3, 3);
+    background-color: rgb(189, 189, 189);
     height: 60px;
+    width: 100vw;
     font-size: 20px;
     font-family: "Inter", sans-serif;
+    text-align: center;
+    position: fixed;
+   
 }
 
 #wrapper {
@@ -32,6 +36,7 @@ main {
     display: grid;
     grid-template-columns: 150px 1fr; /* Erstes Element im HTML (aside) Breite hier festlegen */
     height: 100vw;
+    padding-top: 60px;
 }
 
 aside {

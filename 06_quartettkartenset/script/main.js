@@ -61,4 +61,43 @@ $(document).ready(function () {
 
         $('#wrapper').append(divBox);
     });
+
+
+// Toggle- und Shuffle-Logik nach dem Laden der Karten initialisieren
+let isRandomOrder = false;
+const wrapper = document.getElementById('wrapper');
+const originalOrder = Array.from(wrapper.children); // Kopie der ursprünglichen Reihenfolge
+let cards = Array.from(wrapper.children); // Aktuelle Karten
+
+// Funktion zum Mischen
+function shuffleCards() {
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    wrapper.innerHTML = '';
+    cards.forEach(card => wrapper.appendChild(card));
+}
+
+// Funktion zum Zurücksetzen
+function resetOrder() {
+    wrapper.innerHTML = '';
+    originalOrder.forEach(card => wrapper.appendChild(card));
+    cards = Array.from(originalOrder);
+}
+
+// Toggle-Funktion
+function toggleOrder() {
+    isRandomOrder = !isRandomOrder;
+    if (isRandomOrder) {
+        shuffleCards();
+        document.getElementById('shuffleButton').innerText = "sortieren"; // Button-Text auf "Sort" ändern
+    } else {
+        resetOrder();
+        document.getElementById('shuffleButton').innerText = "mischen"; // Button-Text auf "Shuffle" ändern
+    }
+}
+
+// Event Listener für den Shuffle-Button
+document.getElementById('shuffleButton').addEventListener('click', toggleOrder);
 });
