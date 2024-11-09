@@ -35,7 +35,7 @@ main {
 }
 
 aside {
-    background: linear-gradient(to bottom, red, purple, turquoise);
+    background: linear-gradient(to bottom, red, green, purple, turquoise, orange, yellow, lime, blue);
     width: 100%; /* Füllt die Spaltenbreite von 150px */
     height: 100%; /* Füllt die gesamte Höhe des main-Containers */
     padding: 1rem;
