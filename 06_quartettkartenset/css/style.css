@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+}
+
+#wrapper {
+    grid-template-columns: repeat(1, 1fr);
+
+}
+
 header {
     background-color: rgb(250, 3, 3);
     height: 60px;
@@ -14,9 +23,20 @@ header {
     font-family: "Inter", sans-serif;
 }
 
-body {
-    margin: 0;
+aside {
+    background-color: aqua;
+    width: 30px;
+    height: 100px;
+
 }
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; /* Abstand zwischen den Karten */
+    padding: 1rem;
+}
+
 
 /* 
 .centered {
@@ -24,7 +44,6 @@ body {
     justify-content: center;
     align-items: center;
 }  */
-
 
 .card-number,
 .stat-icon,
