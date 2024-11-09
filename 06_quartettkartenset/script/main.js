@@ -63,41 +63,40 @@ $(document).ready(function () {
     });
 
 
-// Toggle- und Shuffle-Logik nach dem Laden der Karten initialisieren
-let isRandomOrder = false;
-const wrapper = document.getElementById('wrapper');
-const originalOrder = Array.from(wrapper.children); // Kopie der ursprünglichen Reihenfolge
-let cards = Array.from(wrapper.children); // Aktuelle Karten
+   // Toggle- und Shuffle-Logik nach dem Laden der Karten initialisieren
+   let isRandomOrder = false;
+   const wrapper = document.getElementById('wrapper');
+   const originalOrder = Array.from(wrapper.children); // Kopie der ursprünglichen Reihenfolge
+   let cards = Array.from(wrapper.children); // Aktuelle Karten
 
-// Funktion zum Mischen
-function shuffleCards() {
-    for (let i = cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
-    }
-    wrapper.innerHTML = '';
-    cards.forEach(card => wrapper.appendChild(card));
-}
+   // Funktion zum Mischen mit gmynd
+   function shuffleCards() {
+       cards = gmynd.shuffleArray(cards); // Nutze gmynd zum Mischen
+       wrapper.innerHTML = ''; // Entfernt alle Karten
+       cards.forEach(card => wrapper.appendChild(card)); // Fügt die Karten in zufälliger Reihenfolge hinzu
+   }
 
-// Funktion zum Zurücksetzen
-function resetOrder() {
-    wrapper.innerHTML = '';
-    originalOrder.forEach(card => wrapper.appendChild(card));
-    cards = Array.from(originalOrder);
-}
+   // Funktion zum sortDataieren mit gmynd
+   function resetOrder() {
+       cards = gmynd.sortData(originalOrder, (a, b) => a.querySelector('.card-title').textContent.localeCompare(b.querySelector('.card-title').textContent));
+       wrapper.innerHTML = ''; // Entfernt alle Karten
+       cards.forEach(card => wrapper.appendChild(card)); // Fügt die Karten in sortDataierter Reihenfolge hinzu
+   }
 
-// Toggle-Funktion
-function toggleOrder() {
-    isRandomOrder = !isRandomOrder;
-    if (isRandomOrder) {
-        shuffleCards();
-        document.getElementById('shuffleButton').innerText = "sortieren"; // Button-Text auf "Sort" ändern
-    } else {
-        resetOrder();
-        document.getElementById('shuffleButton').innerText = "mischen"; // Button-Text auf "Shuffle" ändern
-    }
-}
+   // Toggle-Funktion
+   function toggleOrder() {
+       isRandomOrder = !isRandomOrder;
+       if (isRandomOrder) {
+           shuffleCards();
+           document.getElementById('shuffleButton').innerText = "sortDataieren"; // Button-Text auf "sortData" ändern
+       } else {
+           resetOrder();
+           document.getElementById('shuffleButton').innerText = "mischen"; // Button-Text auf "Shuffle" ändern
+       }
+   }
 
-// Event Listener für den Shuffle-Button
-document.getElementById('shuffleButton').addEventListener('click', toggleOrder);
+   // Event Listener für den Shuffle-Button
+   document.getElementById('shuffleButton').addEventListener('click', toggleOrder);
 });
+
+sortData(data, ['group', 'group_number']);
