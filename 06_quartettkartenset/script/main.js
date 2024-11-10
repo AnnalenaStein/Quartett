@@ -63,35 +63,35 @@ $(document).ready(function () {
     });
 
 
-   // Toggle- und Shuffle-Logik nach dem Laden der Karten initialisieren
+
+   // Mischen und wieder sortieren
    let isRandomOrder = false;
    const wrapper = document.getElementById('wrapper');
-   const originalOrder = Array.from(wrapper.children); // Kopie der ursprünglichen Reihenfolge
+   const originalOrder = Array.from(wrapper.children); // Kopie der ursprünglichen Reihenfolge der Karten
    let cards = Array.from(wrapper.children); // Aktuelle Karten
-
-   // Funktion zum Mischen mit gmynd
+   
+   //mischen
    function shuffleCards() {
-       cards = gmynd.shuffleArray(cards); // Nutze gmynd zum Mischen
-       wrapper.innerHTML = ''; // Entfernt alle Karten
-       cards.forEach(card => wrapper.appendChild(card)); // Fügt die Karten in zufälliger Reihenfolge hinzu
-   }
-
-   // Funktion zum sortDataieren mit gmynd
+    cards = gmynd.shuffleArray(cards); // Nutze gmynd zum Mischen
+    wrapper.innerHTML = ''; // Entfernt alle Karten
+    cards.forEach(card => wrapper.appendChild(card)); // Fügt die Karten in zufälliger Reihenfolge hinzu
+}
+   
+   // Funktion zum Zurücksetzen der Reihenfolge
    function resetOrder() {
-       cards = gmynd.sortData(originalOrder, (a, b) => a.querySelector('.card-title').textContent.localeCompare(b.querySelector('.card-title').textContent));
-       wrapper.innerHTML = ''; // Entfernt alle Karten
-       cards.forEach(card => wrapper.appendChild(card)); // Fügt die Karten in sortDataierter Reihenfolge hinzu
+       // Setzt die Karten in ihre ursprüngliche Reihenfolge zurück
+       wrapper.innerHTML = '';
+       originalOrder.forEach(card => wrapper.appendChild(card));
+       cards = Array.from(originalOrder); // Stellt sicher, dass `cards` auch die ursprüngliche Reihenfolge hat
    }
-
-   // Toggle-Funktion
+   
+   // Toggle-Funktion zum Wechseln zwischen Zufällig und Aktuell
    function toggleOrder() {
        isRandomOrder = !isRandomOrder;
        if (isRandomOrder) {
            shuffleCards();
-           document.getElementById('shuffleButton').innerText = "sortDataieren"; // Button-Text auf "sortData" ändern
        } else {
            resetOrder();
-           document.getElementById('shuffleButton').innerText = "mischen"; // Button-Text auf "Shuffle" ändern
        }
    }
 
@@ -99,4 +99,4 @@ $(document).ready(function () {
    document.getElementById('shuffleButton').addEventListener('click', toggleOrder);
 });
 
-sortData(data, ['group', 'group_number']);
+//sortData(data, ['group', 'group_number']);
