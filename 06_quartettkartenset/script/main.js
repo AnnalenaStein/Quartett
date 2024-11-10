@@ -1,17 +1,34 @@
 console.log("HERE WE ARE AGAIN");
 
+//Hintergrundfarbe für Gruppen
+const groupColors = {
+    A: '#FF5733',
+    B: '#33FF57', 
+    C: '#3357FF', 
+    D: '#FF5733',
+    E: '#33FF57', 
+    F: '#3357FF', 
+    G: '#3357FF', 
+    H: '#3357FF',    
+};
+
 data.forEach(animal => {
     console.log(animal.name);
 });
 
 $(document).ready(function () {
     $.each(data, function (index, animal) {
+
+        let color = groupColors[animal.group]
+
         let divBox = $(`<div class="card-wrapper">
             <div class="card-content">
-                <div class="card-number">${animal.group}${animal.group_number}</div>
+            <div class="card-number" style="background: ${color};">
+            ${animal.group}${animal.group_number}
+        </div>
                 <div class="card-title">${animal.name_german}</div>
                 <img src="images/pictures/${animal.name_german}.webp" alt="Nilpferd" class="card-image" />
-                <div class="card-trivia">
+                <div class="card-trivia" style="background: ${color};">
                 ${animal.trivia_german}
                 </div>
                 <div class="stat-icon">
@@ -61,8 +78,6 @@ $(document).ready(function () {
 
         $('#wrapper').append(divBox);
     });
-
-
 
    // Mischen und wieder sortieren
    let isRandomOrder = false;
