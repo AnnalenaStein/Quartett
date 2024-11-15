@@ -1,6 +1,6 @@
 :root {
     --dark-color: #181818;
-    --background-color: beige;
+    --background-color: #F1F1EA;
 }
 
 * {
@@ -13,13 +13,13 @@ body {
 
 
 header {
-    background-color: rgb(189, 189, 189);
+    background-color: rgba(255, 255, 255, 0.7);
     height: 60px;
     width: 100vw;
     font-size: 20px;
     position: fixed;
     text-align: right;
-   
+
 }
 
 h1 {
@@ -28,47 +28,69 @@ h1 {
     font-family: "Inter", sans-serif;
     text-align: center;
     position: fixed;
+    z-index: 1;
 }
 
 button {
-    width: 50px;          /* Breite des Buttons */
-    height: 20px;          /* Höhe des Buttons */
-    font-size: 15px;       /* Schriftgröße im Button */
-    padding: 10px;
+    position: fixed;
+    font-size: 15px; /* Schriftgröße im Button */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    stroke: none;
+    right: 1%;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    stroke: none;
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(86, 86, 86);
 }
 
 #wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
-    grid-template-rows: repeat(8, 1fr); /* 8 Zeilen */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 Spalten */
+    grid-template-rows: repeat(8, 1fr);
+    /* 8 Zeilen */
     padding: 1rem;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgb(212, 143, 86), rgb(116, 255, 116), rgb(255, 124, 255), turquoise, rgb(82, 56, 246), yellow, rgb(145, 255, 145), rgb(98, 98, 209));
+    background: linear-gradient(to bottom, #DB5151, #84F375, #F1B05F, #65B0E1, #4D4C9F, #7A624D, #8C4EBC, #E3D77A);
 }
 
 main {
     display: grid;
-    grid-template-columns: 150px 1fr; /* Erstes Element im HTML (aside) Breite hier festlegen */
+    grid-template-columns: 70px 1fr;
+    /* Erstes Element im HTML (aside) Breite hier festlegen */
     height: 100vw;
     padding-top: 60px;
 }
 
 aside {
-    background: linear-gradient(to bottom, rgb(255, 201, 201), rgb(116, 255, 116), rgb(255, 124, 255), turquoise, orange, yellow, rgb(145, 255, 145), rgb(129, 129, 255));
-    /* background: linear-gradient(to bottom, red, green, purple, turquoise, orange, yellow, lime, blue); */
-    width: 100%; /* Füllt die Spaltenbreite von 150px */
-    height: 100%; /* Füllt die gesamte Höhe des main-Containers */
-    padding: 1rem;
-
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1fr;
+    /* Eine Spalte */
+    background: linear-gradient(to bottom, #f78a8a, #b0f4a7, #e8c8a1, #a1d0ef, #bcbbf7, #b8b0aa, #d1a6f1, #f3edbb);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    color: black;
 }
 
-/* 
-.centered {
+.group-name {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-transform: uppercase;
     display: flex;
-    justify-content: center;
     align-items: center;
-}  */
+    /* Vertikale Zentrierung innerhalb der Zeile */
+    justify-content: center;
+    /* Horizontale Zentrierung innerhalb der Zeile */
+}
 
 .card-number,
 .stat-icon,
@@ -90,8 +112,8 @@ aside {
 
 .card-wrapper:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5); /* Weißes Leuchten */
-   
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5);
+    /* Weißes Leuchten */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -139,14 +161,13 @@ aside {
     align-items: center;
     text-align: center;
     font-style: italic;
-    background-color: rgba(85, 107, 47, 0.693);
     padding: 0 0.5rem;
     border-top: 1px solid var(--dark-color);
     border-bottom: 1px solid var(--dark-color);
 }
 
 .stat-icon {
-    background-color: rgb(214, 213, 213);
+    background-color: #DCDCCF;
 }
 
 .stat-icon img {
