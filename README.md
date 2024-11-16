@@ -1,5 +1,5 @@
 Hallo!
-Willkommen in meinem Repository zum Tier Quartett von mir (Annalena).
+Willkommen in meinem Repository zum Tier Quartett von mir (Annalena). :)
 
 Das Tier Quartett ist ein interaktives Kartenspiel, das Tierkarten mit spannenden Informationen wie Namen, Gruppenzugehörigkeit und Trivia anzeigt. Die Karten lassen sich entweder in sortierter Reihenfolge, gruppiert nach Tiergruppen, oder in zufälliger Reihenfolge anzeigen. Jede Tiergruppe hat dabei eine eigene Farbe, die sowohl auf den Karten als auch im Hintergrund dargestellt wird. Zusätzlich erscheint in der sortierten Ansicht der Name der Gruppe im aside-Bereich auf der linken Seite der Webseite.
 
