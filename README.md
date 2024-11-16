@@ -15,3 +15,4 @@ jQuery: Zum Erstellen und Einfügen von DOM-Elementen.
 gmynd.js: Zum Zufallsmischen der Karten.
 Google Fonts: Schriftart "Inter".
 
+Falls etwas nicht so funktionieren sollte wie hier beschrieben, gib mir gerne bescheid... 
