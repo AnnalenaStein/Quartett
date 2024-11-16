@@ -34,42 +34,42 @@ $(document).ready(function () {
                 <div class="stat-icon">
                     <img src="images/icons/weight.jpg" alt="weight" />
                 </div>
-                <div class="stat-value">4500</div>
+                <div class="stat-value">${animal.max_weight}</div>
 
 
         
                 <div class="stat-icon">
                     <img src="images/icons/length.jpg" alt="length" />
                 </div>
-                <div class="stat-value">400</div>
+                <div class="stat-value">${animal.max_length}</div>
 
 
           
                 <div class="stat-icon">
                     <img src="images/icons/age.jpg" alt="maximum age" />
                 </div>
-                <div class="stat-value">50</div>
+                <div class="stat-value">${animal.max_age}</div>
 
 
        
                 <div class="stat-icon">
                     <img src="images/icons/speed.jpg" alt="max speed" />
                 </div>
-                <div class="stat-value">35</div>
+                <div class="stat-value">${animal.top_speed}</div>
 
 
     
                 <div class="stat-icon">
                     <img src="images/icons/offspring.jpg" alt="offspring count per cycle" />
                 </div>
-                <div class="stat-value">1</div>
+                <div class="stat-value">${animal.litter_size}</div>
 
 
              
                 <div class="stat-icon">
                     <img src="images/icons/death.jpg" alt="casualties per year" />
                 </div>
-                <div class="stat-value">500</div>
+                <div class="stat-value">${animal.deaths}</div>
 
             </div>
 
